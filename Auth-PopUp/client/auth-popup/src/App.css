@@ -6,19 +6,96 @@
 
 .popup__container {
   margin-top: 8rem;
-  width: 30vw;
-  height: 60vh;
+  width: 25rem;
+  height: 35rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   box-shadow: 1px 1px 10px #444;
   border-radius: 10px;
-  
 }
+
+.spacer {
+    padding: 10px;
+    width: 300px ;
+  }
+
+#icons__container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.icon {
+  display: flex;
+  width: 35px;
+  height: 35px;
+}
+
+.icon__container:hover {
+  background-color: #f8c2c2;
+}
+
+.icon__label {
+  background-color: transparent;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 25px;
+  transition: all .1s;
+}
+
+#alternative__signin__container {
+  margin: -40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon__container{
+  transition: all .1s ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+}
+
 
 #inputs__container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 25px;
+}
+
+.input {
+  width: 18rem;
+  height: 2rem;
+  border-width: 1.6px;
+  border-color: #444;
+  background: none;
+  border-style: solid;
+  border-radius: 4px;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 5px;
+}
+
+.round__button__container {
+  margin: 20px;
+}
+
+.round__button {
+  background-color: #1a73e8;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 50px 50px;
+  border: none;
+}
+
+.round__button:hover {
+  background-color: #0e61ce;
 }

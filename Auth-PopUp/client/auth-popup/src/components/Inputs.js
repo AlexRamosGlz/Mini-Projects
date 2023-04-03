@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 
-const Input = ({ value }) => {
-  const [isPassword, setIsPassword] = useState(false);
-
+const Input = ({ value, type }) => {
   return (
     <div className="input__text">
-      <input type={isPassword && "password"} placeholder={value}></input>
+      <input type={type} placeholder={value} className="input"></input>
     </div>
   );
 };
