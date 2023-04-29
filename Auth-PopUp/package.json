@@ -1,0 +1,22 @@
+{
+  "name": "auth-popup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run build --prefix client/auth-popup",
+    "dev_client": "npm run start --prefix client/auth-popup",
+    "server": "npm run deploy --prefix server",
+    "deploy": "run-p server client",
+    "watch": "npm run start --prefix server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm-run-all": "^4.1.5",
+    "pm2": "^5.3.0"
+  }
+}
+
+

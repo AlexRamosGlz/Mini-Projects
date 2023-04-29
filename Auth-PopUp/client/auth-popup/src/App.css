@@ -4,16 +4,37 @@
   align-items: center;
 }
 
+.home {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff0f0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .popup__container {
-  margin-top: 8rem;
-  width: 25rem;
-  height: 35rem;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   box-shadow: 1px 1px 10px #444;
   border-radius: 10px;
+  transition: all .5s ease-in-out;
+  opacity: 0; 
+  transform: translateY(100vh);
+  background-color: white;
+  width: 0;
+  height: 0;
+}
+
+.show__popup{
+  opacity: 1;
+  transform: translateY(0);
+  width: 25rem;
+  height: 35rem;
 }
 
 .spacer {
@@ -31,11 +52,15 @@
   display: flex;
   width: 35px;
   height: 35px;
+  opacity: .7;
+  transition: opacity .3s;
 }
 
-.icon__container:hover {
-  background-color: #f8c2c2;
+.icon:hover {
+  opacity: 1;
 }
+
+
 
 .icon__label {
   background-color: transparent;
@@ -74,17 +99,24 @@
 .input {
   width: 18rem;
   height: 2rem;
-  border-width: 1.6px;
-  border-color: #444;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border: none;
   background: none;
-  border-style: solid;
+  
   border-radius: 4px;
   font-family: 'Poppins', sans-serif;
   padding-left: 5px;
 }
 
+.input:focus {
+ outline: none;
+}
+
 .round__button__container {
   margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .round__button {
@@ -94,8 +126,66 @@
   height: 40px;
   border-radius: 50px 50px;
   border: none;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .round__button:hover {
   background-color: #0e61ce;
+  border-radius: 50px 50px;
 }
+
+.tabs__container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-self: flex-start;
+  margin-left: 3.5rem;
+  position: relative;
+  top: -60px;
+}
+
+#text__button__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+
+.text__button {
+  background-color: transparent;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  width: 50px;
+  height: 40px;
+  transition: color 4s;
+}
+
+.text__button :hover {
+  color: #0e61ce;
+}
+
+.cancel__icon {
+  display: flex;
+    width: 25px;
+    height: 25px;
+}
+
+.close__button {
+  background: none;
+  outline: none;
+  border: none;
+  opacity: .3;
+  transition: opacity .3s ease-out;
+}
+
+.close__button__container {
+  display: flex;
+  margin-left: 135px;
+  margin-top: 15px;
+}
+
+.close__button:hover {
+  opacity: 1;
+}
+
+

@@ -1,19 +1,24 @@
 import React, { useRef, useState } from "react";
 
-const IconContainer = ({ Icon, iconLabel, setShowIconLabel, setIconLabel }) => {
+const IconContainer = ({
+  Icon,
+  iconLabel,
+  setShowIconLabel,
+  setIconLabel,
+  onClick,
+}) => {
   const iconContainerRef = useRef();
 
   return (
     <div
       className="icon__container"
       onMouseOver={() => {
-        setShowIconLabel(true);
         setIconLabel(iconLabel);
       }}
       onMouseOut={() => {
-        setShowIconLabel(false);
         setIconLabel("");
       }}
+      onClick={onClick}
       ref={iconContainerRef}
     >
       <Icon className="icon" />
