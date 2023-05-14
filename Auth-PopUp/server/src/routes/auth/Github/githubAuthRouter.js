@@ -2,7 +2,8 @@ const express = require("express");
 const passport = require("passport");
 const GitHubStrategy = require("passport-github2");
 
-const { verifyCallback } = require("./githubAuthMiddleware");
+const { verifyCallback, parseGithubUser } = require("./githubAuthMiddleware");
+const { gitHubLogin } = require("./githubAuthController");
 
 const githubAuthRouter = express.Router();
 
@@ -28,12 +29,8 @@ githubAuthRouter.get(
     failureRedirect: "/",
     session: false,
   }),
-  function (req, res) {
-    console.log("entro");
-    console.log(req.user);
-
-    res.redirect("/");
-  }
+  parseGithubUser,
+  gitHubLogin
 );
 
 module.exports = githubAuthRouter;

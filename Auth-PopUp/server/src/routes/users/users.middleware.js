@@ -26,13 +26,13 @@ function authenticateToken(req, res, next) {
 function checkIfValidBody(req, res, next) {
   const { password, email, username } = req.body;
 
-  if (req.path === "/profile") return next();
-
-  if (!password)
-    return res.status(400).json({ error: `"password" value is missing` });
+  if (req.path === "/profile" || req.path === "/logout") return next();
 
   if (!email)
     return res.status(400).json({ error: `"email" value is missing` });
+
+  if (!password)
+    return res.status(400).json({ error: `"password" value is missing` });
 
   if (!req.path === "/login" && !username)
     return res.status(400).json({ error: `"username" values is missing` });

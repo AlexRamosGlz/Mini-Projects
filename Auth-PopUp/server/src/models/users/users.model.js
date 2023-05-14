@@ -8,6 +8,7 @@ const {
   createGetUserPasswordQuery,
   createLoginQuery,
   createGetUserByCredentialsQuery,
+  createLogOutQuery,
 } = require("../../routes/users/users.querys");
 const execute = require("../../config/db");
 const responseParser = require("../../helpers/responseParser");
@@ -97,10 +98,23 @@ async function postlogin3rdPartyAuthServer({ usersID, username }) {
   return token;
 }
 
+async function logOut(userId, token) {
+  try {
+    const query = createLogOutQuery(userId, token);
+
+    await execute(query);
+
+    return { succes: true };
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
 module.exports = {
   getUserInfo,
   postNewUser,
   getUserPassword,
   postCredentialsLogin,
   postlogin3rdPartyAuthServer,
+  logOut,
 };

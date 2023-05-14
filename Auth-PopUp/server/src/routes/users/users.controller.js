@@ -2,6 +2,7 @@ const {
   getUserInfo,
   postNewUser,
   postCredentialsLogin,
+  logOut,
 } = require("../../models/users/users.model");
 
 const errorParser = require("../../helpers/errorParser");
@@ -48,4 +49,22 @@ async function httpsCredentialsLogin(req, res) {
   return res.status(200).json({ token });
 }
 
-module.exports = { httpsGetUserInfo, httpsPostNewUser, httpsCredentialsLogin };
+async function httpsLogout(req, res) {
+  const { userId: usersID } = req.userId;
+  const token = req.headers["authorization"].split(" ")[1];
+
+  try {
+    await logOut(usersID, token);
+  } catch (error) {
+    return res.status(400).json(errorParser(error));
+  }
+
+  res.status(200).json({ succes: "true" });
+}
+
+module.exports = {
+  httpsGetUserInfo,
+  httpsPostNewUser,
+  httpsCredentialsLogin,
+  httpsLogout,
+};

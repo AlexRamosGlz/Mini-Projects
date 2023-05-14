@@ -35,6 +35,10 @@ function createLoginQuery(queryParamas) {
   )})`;
 }
 
+function createLogOutQuery(userId, token) {
+  return `DELETE FROM tokens WHERE usersID="${userId}" AND token="${token}"`;
+}
+
 module.exports = {
   createUserPostQuery,
   createPostTokenQuery,
@@ -42,4 +46,5 @@ module.exports = {
   createGetUserPasswordQuery,
   createGetUserByCredentialsQuery,
   createLoginQuery,
+  createLogOutQuery,
 };
