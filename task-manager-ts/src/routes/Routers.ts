@@ -12,7 +12,6 @@ class Router {
 
   initRoutes(): void {
     this.router.use(routesConstants.USERS, new User().usersRouter);
-    this.router.get("/", (req, res) => {
       res.send("hola mundo");
     });
   }

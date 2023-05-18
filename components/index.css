@@ -1,0 +1,22 @@
+.container {
+  background-color: red;
+  width: 100px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  transition: all 1s;
+}
+
+.toggler {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: blue;
+  transition: all 1s;
+}
+
+.toggler:hover {
+  transform: translateX();
+}
